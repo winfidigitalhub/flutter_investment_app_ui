@@ -90,45 +90,15 @@ class _BuyAppPageState extends State<BuyAppPage> {
               ),
 //            LastInvestment(),
 //            Deposits(),
-            GestureDetector(
-              onTap: (){
-                openwhatsapp() async{
-                  var whatsapp ="+2349032834805";
-                  var whatsappURl_android = "whatsapp://send?phone="+whatsapp+"&text=Hello, I would like to purchase and modify this Investment App according to my business.";
-                  var whatappURL_ios ="https://wa.me/$whatsapp?text=${Uri.parse("Hello, I would like to purchase and modify this Investment App according to my business.")}";
-                  if(Platform.isIOS){
-                    // for iOS phone only
-                    if( await canLaunch(whatappURL_ios)){
-                      await launch(whatappURL_ios, forceSafariVC: false);
-                    }else{
-                      ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: new Text("whatsapp no installed")));
-                    }
-                  }else{
-                    // android , web
-                    if( await canLaunch(whatsappURl_android)){
-                      await launch(whatsappURl_android);
-                    }else{
-                      ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: new Text("whatsapp no installed")));
-                    }
-                  }
-                }
-              setState(() {
-                openwhatsapp();
-              });
-
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  color: Color(0xFF24CCA7),
-                ),
-                width: MediaQuery.of(context).size.width-50,
-                height: 50,
-                  child:
-                    Center(child: Text("Purchase This App",style: TextStyle(color: Colors.white,fontSize: 24,fontWeight: FontWeight.w600),)),
-                ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                color: Color(0xFF24CCA7),
+              ),
+              width: MediaQuery.of(context).size.width-50,
+              height: 50,
+                child:
+                  Center(child: Text("Call Us Now!",style: TextStyle(color: Colors.white,fontSize: 24,fontWeight: FontWeight.w600),)),
               ),
 
             Text('Developed by \n WINFI DIGITAL TECHNOLOGY \n \n +234 9032834805 \n +234 7039152425 \n winfidigitals@gmail.com', style: TextStyle(fontSize: 14, color: Colors.deepOrangeAccent), textAlign: TextAlign.center,
